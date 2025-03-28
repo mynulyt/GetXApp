@@ -17,9 +17,9 @@ class _SlideropacityState extends State<Slideropacity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Column(
         children: [
-          SizedBox(height: 100),
           Obx(
             () => Container(
               child: Center(
@@ -29,7 +29,8 @@ class _SlideropacityState extends State<Slideropacity> {
                 ),
               ),
               height: 200,
-              width: 200,
+              width: double.infinity,
+
               color: Colors.green.withOpacity(
                 exampletwoController.opacity.value,
               ),
