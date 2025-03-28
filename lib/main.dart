@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_app/home_screen.dart';
+import 'package:getx_app/sliderOpacity.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,6 +9,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(title: 'Material App', home: HomeScreen());
+    return GetMaterialApp(title: 'Material App', home: Slideropacity());
   }
 }
