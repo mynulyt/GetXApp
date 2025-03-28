@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:getx_app/exampleTwo.dart';
 
 class Slideropacity extends StatefulWidget {
   const Slideropacity({super.key});
@@ -8,11 +11,7 @@ class Slideropacity extends StatefulWidget {
   State<Slideropacity> createState() => _SlideropacityState();
 }
 
-double opacity = 0.4;
-@override
-void initState() {
-  initState();
-}
+Exampletwo exampletwoController = Get.put(Exampletwo());
 
 class _SlideropacityState extends State<Slideropacity> {
   @override
@@ -20,13 +19,30 @@ class _SlideropacityState extends State<Slideropacity> {
     return Scaffold(
       body: Column(
         children: [
-          Container(height: 200, width: 200, color: Colors.green),
-          Slider(
-            value: opacity,
-            onChanged: (value) {
-              print(value);
-              opacity = value;
-            },
+          SizedBox(height: 100),
+          Obx(
+            () => Container(
+              child: Center(
+                child: Text(
+                  'Hello',
+                  style: TextStyle(color: Colors.red, fontSize: 34),
+                ),
+              ),
+              height: 200,
+              width: 200,
+              color: Colors.green.withOpacity(
+                exampletwoController.opacity.value,
+              ),
+            ),
+          ),
+
+          Obx(
+            () => Slider(
+              value: exampletwoController.opacity.value,
+              onChanged: (value) {
+                exampletwoController.setOpacity(value);
+              },
+            ),
           ),
         ],
       ),
