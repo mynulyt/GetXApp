@@ -22,17 +22,17 @@ class _SlideropacityState extends State<Slideropacity> {
         children: [
           Obx(
             () => Container(
-              child: Center(
-                child: Text(
-                  'Hello',
-                  style: TextStyle(color: Colors.red, fontSize: 34),
-                ),
-              ),
               height: 200,
               width: double.infinity,
 
               color: Colors.green.withOpacity(
                 exampletwoController.opacity.value,
+              ),
+              child: Center(
+                child: Text(
+                  'Hello',
+                  style: TextStyle(color: Colors.red, fontSize: 34),
+                ),
               ),
             ),
           ),
